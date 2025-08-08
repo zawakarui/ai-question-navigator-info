@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI質問ナビゲーター | プライバシーポリシー</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/zawakarui/ai-question-navigator/main/icons/icon32.png">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <span class="emoji">🤖</span>
+                    <h1>AI質問ナビゲーター</h1>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="ja">日本語</button>
+                    <button class="lang-btn" data-lang="en">English</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="hero-section">
+                <h2 class="hero-title">
+                    <span class="emoji">🔒</span>
+                    <span data-translate="hero-title">プライバシーポリシー</span>
+                </h2>
+                <p class="hero-description" data-translate="hero-description">
+                    AI質問ナビゲーター Chrome拡張機能のプライバシーポリシーをご確認いただけます。お客様のプライバシー保護について詳しく説明いたします。
+                </p>
+            </div>
+
+            <div class="policy-cards">
+                <div class="policy-card">
+                    <div class="card-icon">🛡️</div>
+                    <h3 data-translate="complete-privacy">完全プライバシー保護</h3>
+                    <ul>
+                        <li data-translate="no-data-collection">データ収集なし</li>
+                        <li data-translate="no-external-transmission">外部送信なし</li>
+                        <li data-translate="local-processing">ローカル処理のみ</li>
+                    </ul>
+                </div>
+
+                <div class="policy-card">
+                    <div class="card-icon">⚡</div>
+                    <h3 data-translate="minimal-permissions">必要最小権限</h3>
+                    <ul>
+                        <li><code>activeTab</code> - <span data-translate="question-detection">質問検出のみ</span></li>
+                        <li><code>scripting</code> - <span data-translate="ui-display">UI表示のみ</span></li>
+                    </ul>
+                </div>
+
+                <div class="policy-card">
+                    <div class="card-icon">🌟</div>
+                    <h3 data-translate="transparency">透明性の確保</h3>
+                    <ul>
+                        <li data-translate="open-source">オープンソース</li>
+                        <li data-translate="manifest-v3">Manifest V3準拠</li>
+                        <li data-translate="security-guaranteed">セキュリティ保証</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h3 data-translate="read-full-policy">詳細なプライバシーポリシー</h3>
+                <p data-translate="choose-language">お好みの言語でプライバシーポリシーをお読みください：</p>
+                
+                <div class="cta-buttons">
+                    <a href="privacy-policy-ja.html" class="cta-button primary">
+                        <span class="emoji">📋</span>
+                        <span data-translate="japanese-version">日本語版を読む</span>
+                    </a>
+                    <a href="privacy-policy-en.html" class="cta-button secondary">
+                        <span class="emoji">📄</span>
+                        <span data-translate="english-version">English Version</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="quick-info">
+                <div class="info-item">
+                    <span class="emoji">📅</span>
+                    <strong data-translate="last-updated">最終更新</strong>: 2025年6月18日
+                </div>
+                <div class="info-item">
+                    <span class="emoji">📋</span>
+                    <strong data-translate="version">バージョン</strong>: 1.0.0
+                </div>
+                <div class="info-item">
+                    <span class="emoji">🌍</span>
+                    <strong data-translate="applicable">適用範囲</strong>: <span data-translate="all-users">全世界のユーザー</span>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 AI Question Navigator Development Team</p>
+                <div class="footer-links">
+                    <a href="https://github.com/zawakarui/ai-question-navigator" target="_blank">
+                        <span class="emoji">📦</span> GitHub
+                    </a>
+                    <a href="https://chromewebstore.google.com/detail/ai-question-navigator" target="_blank">
+                        <span class="emoji">🏪</span> Chrome Web Store
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 言語切り替え機能
+        const translations = {
+            ja: {
+                'hero-title': 'プライバシーポリシー',
+                'hero-description': 'AI質問ナビゲーター Chrome拡張機能のプライバシーポリシーをご確認いただけます。お客様のプライバシー保護について詳しく説明いたします。',
+                'complete-privacy': '完全プライバシー保護',
+                'no-data-collection': 'データ収集なし',
+                'no-external-transmission': '外部送信なし',
+                'local-processing': 'ローカル処理のみ',
+                'minimal-permissions': '必要最小権限',
+                'question-detection': '質問検出のみ',
+                'ui-display': 'UI表示のみ',
+                'transparency': '透明性の確保',
+                'open-source': 'オープンソース',
+                'manifest-v3': 'Manifest V3準拠',
+                'security-guaranteed': 'セキュリティ保証',
+                'read-full-policy': '詳細なプライバシーポリシー',
+                'choose-language': 'お好みの言語でプライバシーポリシーをお読みください：',
+                'japanese-version': '日本語版を読む',
+                'english-version': 'English Version',
+                'last-updated': '最終更新',
+                'version': 'バージョン',
+                'applicable': '適用範囲',
+                'all-users': '全世界のユーザー'
+            },
+            en: {
+                'hero-title': 'Privacy Policy',
+                'hero-description': 'Review the privacy policy for AI Question Navigator Chrome Extension. We detail how we protect your privacy.',
+                'complete-privacy': 'Complete Privacy Protection',
+                'no-data-collection': 'No Data Collection',
+                'no-external-transmission': 'No External Transmission',
+                'local-processing': 'Local Processing Only',
+                'minimal-permissions': 'Minimal Permissions',
+                'question-detection': 'Question Detection Only',
+                'ui-display': 'UI Display Only',
+                'transparency': 'Transparency Assured',
+                'open-source': 'Open Source',
+                'manifest-v3': 'Manifest V3 Compliant',
+                'security-guaranteed': 'Security Guaranteed',
+                'read-full-policy': 'Full Privacy Policy',
+                'choose-language': 'Read our privacy policy in your preferred language:',
+                'japanese-version': '日本語版を読む',
+                'english-version': 'Read English Version',
+                'last-updated': 'Last Updated',
+                'version': 'Version',
+                'applicable': 'Applicable',
+                'all-users': 'All Users Worldwide'
+            }
+        };
+
+        function switchLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update active language button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Language switcher event listeners
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                switchLanguage(btn.dataset.lang);
+            });
+        });
+
+        // Initialize with browser language preference
+        const browserLang = navigator.language.startsWith('ja') ? 'ja' : 'en';
+        switchLanguage(browserLang);
+    </script>
+</body>
+</html>
