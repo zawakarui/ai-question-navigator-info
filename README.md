@@ -12,6 +12,12 @@ AI質問ナビゲーター Chrome拡張機能の公式情報サイトです。�
 
 ## 📝 更新履歴
 
+### 2026-02-17: CI/CDワークフロー修正 🔧
+- 🔄 **GitHub Actions `sync-to-docs` ワークフローの修正**
+- ✅ OIDC認証用に `id-token: write` パーミッションを追加
+- ✅ Claude Code Action v1 API対応: `claude_args: --allowedTools` に変更
+- ✅ ワークフロー実行時の権限エラーとAPIエラーを解消
+
 ### v1.1.1 (2025-11-06) 🆕
 - 🐛 **ダークモード対応の改善** (Issue #4)
 - ✅ ChatGPTダークモード時のサイドバー内テキストの視認性を修正
