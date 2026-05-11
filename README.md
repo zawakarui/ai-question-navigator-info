@@ -1,8 +1,8 @@
 # AI質問ナビゲーター - 情報サイト
 
-![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.3.0-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
+![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.3.1-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
 
-![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.3.0-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
+![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.3.1-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
 
 ## 🔗 リンク
 
@@ -87,7 +87,7 @@ cd ai-question-navigator
 | **`↻`ボタン** | 質問リスト更新 |
 | **`×`ボタン** | サイドバーを閉じる |
 
-### Q+A コピー機能 🆕 (v1.3.0)
+### Q+A コピー機能 (v1.3.0)
 
 質問とAI回答をセットで他ツールに転記したいときに使えます。
 
@@ -261,7 +261,15 @@ aiNavigatorDebug.reinitialize();
 
 ## 📝 更新履歴
 
-### v1.3.0 (2026-05-11) 🆕
+### v1.3.1 (2026-05-11) 🆕
+- ✨ **「最小化状態でスタート」オプションの追加**
+- ✅ popup に ON/OFF トグルを設置し、`chrome.storage.local` で永続化
+- ✅ ON の場合は毎回サイドバーを最小化状態（幅 150px、ヘッダーのみ）で起動
+- ✅ OFF の場合は従来通り展開状態で起動（デフォルト）
+- 🧹 popup ヘッダーから古いバージョン表記（v1.2.2）を削除し、表記乖離を恒久的に解消
+- 🛡️ **設計方針**: 既存の `toggleMinimize()` ロジックには手を入れず、初期フラグの起点のみ差し替え（インラインスタイル制御を維持し hover 退行を予防）
+
+### v1.3.0 (2026-05-11)
 - ✨ **Q+A コピー機能の追加**
 - ✅ 個別コピーボタン **Shift+クリック** で質問+回答を Markdown 形式でクリップボードへ
 - ✅ 全件コピーボタン **Shift+クリック** で全 Q+A を `---` 区切りで連結してクリップボードへ
