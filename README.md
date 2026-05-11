@@ -1,8 +1,8 @@
 # AI質問ナビゲーター - 情報サイト
 
-![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.2.3-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
+Claude、ChatGPT、Gemini、Perplexityに対応した質問ナビゲーション機能を提供するChrome拡張機能です。長い会話の中から質問を自動検出し、素早くアクセスできるサイドバーを表示します。
 
-AI質問ナビゲーター Chrome拡張機能の公式情報サイトです。プライバシーポリシー、サポート、ドキュメントを提供しています。
+![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.3.0-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
 
 ## 🔗 リンク
 
@@ -10,9 +10,267 @@ AI質問ナビゲーター Chrome拡張機能の公式情報サイトです。�
 - **拡張機能リポジトリ**: [https://github.com/zawakarui/ai-question-navigator](https://github.com/zawakarui/ai-question-navigator)
 - **Chrome Web Store**: [AI Question Navigator](https://chromewebstore.google.com/detail/ai-question-navigator)
 
+## ✨ 主な機能
+
+### 🎯 統合サポート
+- **Claude.ai** - Claude AI チャット
+- **ChatGPT** - OpenAI ChatGPT
+- **Gemini** - Google Gemini AI
+- **Perplexity.ai** - Perplexity AI 検索エンジン 🆕
+
+### 🔍 自動質問検出
+- ユーザーが投稿した質問のみを自動検出
+- AI回答との区別機能
+- 重複質問の自動除去
+
+### 🎨 統合UI (Geminiベース)
+- サイドバー形式での質問一覧表示
+- **クリーンな表示**: どのAIサービスかを識別するラベルを非表示にし、質問文が見やすくなりました。
+- ドラッグ&ドロップでの位置変更
+- リサイズ機能
+- 最小化/展開機能
+
+### 🚀 ナビゲーション機能
+- 質問クリックで該当箇所へスムーズスクロール
+- 質問のハイライト表示
+- リアルタイム質問検出
+
+## 📦 インストール方法
+
+### 1. ファイルの準備
+
+```bash
+# プロジェクトディレクトリをダウンロード
+git clone [repository-url]
+cd ai-question-navigator
+
+# または、ZIPファイルをダウンロードして展開
+```
+
+### 2. アイコンファイルの作成
+
+`icons/` ディレクトリに以下のPNGファイルを配置：
+- `icon16.png` (16x16px)
+- `icon48.png` (48x48px)
+- `icon128.png` (128x128px)
+
+💡 `icons/icon-template.svg` を [SVG to PNG変換ツール](https://cloudconvert.com/svg-to-png) で変換できます。
+
+### 3. Chrome拡張機能のインストール
+
+1. Chromeで `chrome://extensions/` を開く
+2. 右上の「デベロッパーモード」をONにする
+3. 「パッケージ化されていない拡張機能を読み込む」をクリック
+4. `ai-question-navigator` フォルダを選択
+5. 「フォルダーの選択」をクリック
+
+### 4. 動作確認
+
+1. [Claude.ai](https://claude.ai/)、[ChatGPT](https://chatgpt.com/)、[Gemini](https://gemini.google.com/)、または[Perplexity.ai](https://www.perplexity.ai/)にアクセス
+2. 質問を投稿
+3. 画面右上にサイドバーが表示されることを確認
+
+## 🎮 使用方法
+
+### 基本操作
+
+| 操作 | 説明 |
+|------|------|
+| **質問項目クリック** | 該当質問にスムーズスクロール |
+| **個別コピーボタンクリック** | 質問テキストのみをコピー |
+| **個別コピーボタンShift+クリック** | 質問 + 回答を Markdown 形式でコピー 🆕 |
+| **全件コピー（`⎘`）クリック** | 全質問テキストをコピー |
+| **全件コピー（`⎘`）Shift+クリック** | 全質問 + 全回答を Markdown 形式でコピー 🆕 |
+| **ヘッダードラッグ** | サイドバー位置を移動 |
+| **右下角ドラッグ** | サイドバーサイズ変更 |
+| **`−`ボタン** | 最小化/展開 |
+| **`↻`ボタン** | 質問リスト更新 |
+| **`×`ボタン** | サイドバーを閉じる |
+
+### Q+A コピー機能 🆕 (v1.3.0)
+
+質問とAI回答をセットで他ツールに転記したいときに使えます。
+
+- **通常クリック**: 質問テキストのみがクリップボードに入ります（v1.2.x 以前と同じ挙動）
+- **Shift+クリック**: 質問と回答が Markdown 形式（`## 質問 N` / `## 回答`）でクリップボードに入ります
+- **回答が取得できない場合**（仮想スクロールで回答が画面外に unmount されているとき、Gemini の空回答既知バグ等）はフォールバックとして質問のみコピーされ、ボタンの tooltip に「回答未取得、質問のみコピーしました」と表示されます
+
+ボタンにマウスを重ねるとネイティブ tooltip で挙動の説明が表示されるため、Shift キーの存在を覚えていなくても気づける設計になっています。
+
+### デバッグ機能
+
+ブラウザのコンソールで以下のコマンドが使用できます：
+
+```javascript
+// 手動更新
+aiNavigatorDebug.refresh();
+
+// 質問数確認
+aiNavigatorDebug.getQuestionCount();
+
+// サイドバー表示切替
+aiNavigatorDebug.toggleSidebar();
+
+// 完全再初期化
+aiNavigatorDebug.reinitialize();
+
+// 現在のサービス確認
+aiNavigatorDebug.getCurrentService();
+```
+
+## 🏗️ 技術仕様
+
+### アーキテクチャ
+
+```
+┌─────────────────────────────────────────────┐
+│           Chrome Extension                  │
+├─────────────────────────────────────────────┤
+│     Unified Question Navigator              │
+├─────────────────────────────────────────────┤
+│ ┌─────────┐ ┌─────────┐ ┌─────┐ ┌────────┐ │
+│ │ Claude  │ │ChatGPT  │ │Gemini│ │Perplex.│ │
+│ │Detector │ │Detector │ │Det.  │ │Detector│ │
+│ └─────────┘ └─────────┘ └─────┘ └────────┘ │
+├─────────────────────────────────────────────┤
+│         Navigator UI (共通)                 │
+└─────────────────────────────────────────────┘
+```
+
+### 主要技術
+
+- **Manifest V3** - Chrome Extension API
+- **Vanilla JavaScript** - フレームワーク非依存
+- **CSS3** - レスポンシブデザイン
+- **MutationObserver** - DOM変更監視
+- **プラグイン式設計** - サービス別モジュール
+
+## 🔧 開発・保守
+
+### 最近の変更
+- サイドバー内だけでCSS変数が適用されるようにスコープを限定し、ダークモード/高コントラストの上書きもサイドバー内に適用。
+
+### ファイル構成
+
+```
+ai-question-navigator/
+├── manifest.json              # 拡張機能設定
+├── content.js                 # メインコントローラー
+├── popup.html                 # ポップアップUI
+├── popup.js                   # ポップアップ制御
+├── modules/                   # 検出器モジュール
+│   ├── base-detector.js       # 基底クラス
+│   ├── claude-detector.js     # Claude専用
+│   ├── chatgpt-detector.js    # ChatGPT専用
+│   ├── gemini-detector.js     # Gemini専用
+│   └── perplexity-detector.js # Perplexity専用 🆕
+├── ui/                        # UI関連
+│   ├── navigator-ui.js        # 共通UI
+│   └── styles.css            # スタイルシート
+├── icons/                     # アイコン類
+└── README.md                  # このファイル
+```
+
+### カスタマイズ
+
+#### セレクターの追加
+新しいDOM構造に対応する場合：
+
+```javascript
+// 例：Claude用セレクターの追加
+// modules/claude-detector.js
+this.selectors = {
+  primary: '[data-is-streaming="false"][data-message-author-role="human"]',
+  fallback: [
+    '.font-user-message',
+    '.new-selector-class',  // ← 追加
+    // ...
+  ]
+};
+```
+
+#### スタイルのカスタマイズ
+テーマ色の変更：
+
+```css
+/* ui/styles.css */
+:root {
+  --claude-color: #ff6b35;      /* Claude橙 */
+  --chatgpt-color: #10a37f;     /* ChatGPT緑 */
+  --gemini-color: #4285f4;      /* Gemini青 */
+  --perplexity-color: #20b2aa;  /* Perplexity水色 */ 🆕
+}
+```
+
+### 更新方法
+
+1. ファイルを修正
+2. `chrome://extensions/` でリロードボタンをクリック
+3. 対象ページをリフレッシュ
+
+## 🐛 トラブルシューティング
+
+### よくある問題
+
+#### Q: サイドバーが表示されない
+**A**: 以下を確認してください：
+- 対応サイト（Claude.ai、ChatGPT、Gemini、Perplexity.ai）にアクセスしているか
+- 拡張機能が有効になっているか
+- コンソールエラーがないか
+
+#### Q: 質問が検出されない
+**A**: 以下を試してください：
+```javascript
+// コンソールで実行
+aiNavigatorDebug.refresh();
+aiNavigatorDebug.getQuestionCount();
+```
+
+#### Q: 動作が重い
+**A**: 以下で状態を確認：
+```javascript
+// メモリ使用量確認
+console.log(performance.memory);
+// 再初期化
+aiNavigatorDebug.reinitialize();
+```
+
+### エラー対応
+
+| エラーメッセージ | 原因 | 対処法 |
+|------------------|------|--------|
+| `Selector failed` | DOM構造変更 | セレクター更新 |
+| `No questions found` | 検出失敗 | 手動更新実行 |
+| `Script injection failed` | 権限不足 | 拡張機能再インストール |
+
+## 🤝 コントリビューション
+
+### 改善提案・バグレポート
+
+1. **Issue作成** - 具体的な問題を記述
+2. **再現手順** - 問題の発生条件を明記
+3. **環境情報** - ブラウザ版本・OS等
+
+### 機能追加
+
+1. **Fork** - プロジェクトをフォーク
+2. **Branch作成** - 機能ブランチを作成
+3. **実装** - コードを追加・修正
+4. **Test** - 動作確認
+5. **Pull Request** - 変更を提案
+
 ## 📝 更新履歴
 
-### v1.2.3 (2026-02-17) 🆕
+### v1.3.0 (2026-05-08) 🆕
+- ✨ **Q+A コピー機能の追加**
+- ✅ 個別コピーボタン Shift+クリックで質問+回答を Markdown 形式でクリップボードへ
+- ✅ 全件コピーボタン Shift+クリックで全 Q+A を `---` 区切りで連結してクリップボードへ
+- ✅ 通常クリックの挙動（質問のみコピー）は v1.2.x 以前と互換
+- ✅ 回答が取得できないとき（仮想スクロール unmount / 空回答）は質問のみコピー + 警告 tooltip にフォールバック
+- ✅ ボタンの native tooltip で Shift+クリック挙動を案内
+- 🛡️ **設計方針**: 1 ボタン構造を維持し、CSS / hover ロジックを一切変更しないことで過去の hover 退行（v1.1.x 系で発生した copy ボタン消失・位置ズレ）の再発を防止
+
+### v1.2.3 (2026-02-17)
 - 🎯 **ChatGPT Codexページのサイドバー位置調整**
 - ✅ Codexページ固有メニューとの重なりを回避するため初期位置を下方に調整
 - ✅ 通常のChatGPTページや他サービスには影響なし
