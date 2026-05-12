@@ -1,8 +1,8 @@
 # AI質問ナビゲーター - 情報サイト
 
-![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.3.0-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
+Claude、ChatGPT、Gemini、Perplexityに対応した質問ナビゲーション機能を提供するChrome拡張機能です。長い会話の中から質問を自動検出し、素早くアクセスできるサイドバーを表示します。
 
-![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.3.0-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
+![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.3.1-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
 
 ## 🔗 リンク
 
@@ -87,7 +87,7 @@ cd ai-question-navigator
 | **`↻`ボタン** | 質問リスト更新 |
 | **`×`ボタン** | サイドバーを閉じる |
 
-### Q+A コピー機能 🆕 (v1.3.0)
+### Q+A コピー機能 (v1.3.0)
 
 質問とAI回答をセットで他ツールに転記したいときに使えます。
 
@@ -261,13 +261,21 @@ aiNavigatorDebug.reinitialize();
 
 ## 📝 更新履歴
 
-### v1.3.0 (2026-05-11) 🆕
+### v1.3.1 (2026-05-11) 🆕
+- ✨ **「最小化状態でスタート」オプションの追加**
+- ✅ popup に ON/OFF トグルを設置し、`chrome.storage.local` で永続化
+- ✅ ON の場合は毎回サイドバーを最小化状態（幅 150px、ヘッダーのみ）で起動
+- ✅ OFF の場合は従来通り展開状態で起動（デフォルト）
+- 🧹 popup ヘッダーから古いバージョン表記（v1.2.2）を削除し、表記乖離を恒久的に解消
+- 🛡️ **設計方針**: 既存の `toggleMinimize()` ロジックには手を入れず、初期フラグの起点のみ差し替え（インラインスタイル制御を維持し hover 退行を予防）
+
+### v1.3.0 (2026-05-08)
 - ✨ **Q+A コピー機能の追加**
-- ✅ 個別コピーボタン **Shift+クリック** で質問+回答を Markdown 形式でクリップボードへ
-- ✅ 全件コピーボタン **Shift+クリック** で全 Q+A を `---` 区切りで連結してクリップボードへ
-- ✅ 通常クリック（質問のみコピー）の挙動は v1.2.x 以前と互換
-- ✅ 回答が取得できない場合（仮想スクロール unmount / 空回答）は質問のみコピー + 警告 tooltip にフォールバック
-- ✅ ボタンの native tooltip で Shift+クリック挙動を案内（発見性確保）
+- ✅ 個別コピーボタン Shift+クリックで質問+回答を Markdown 形式でクリップボードへ
+- ✅ 全件コピーボタン Shift+クリックで全 Q+A を `---` 区切りで連結してクリップボードへ
+- ✅ 通常クリックの挙動（質問のみコピー）は v1.2.x 以前と互換
+- ✅ 回答が取得できないとき（仮想スクロール unmount / 空回答）は質問のみコピー + 警告 tooltip にフォールバック
+- ✅ ボタンの native tooltip で Shift+クリック挙動を案内
 - 🛡️ **設計方針**: 1 ボタン構造を維持し、CSS / hover ロジックを一切変更しないことで過去の hover 退行（v1.1.x 系で発生した copy ボタン消失・位置ズレ）の再発を防止
 
 ### v1.2.3 (2026-02-17)
