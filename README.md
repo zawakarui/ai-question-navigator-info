@@ -7,8 +7,7 @@ Claude、ChatGPT、Gemini、Perplexityに対応した質問ナビゲーション
 ## 🔗 リンク
 
 - **情報サイト**: [https://zawakarui.github.io/ai-question-navigator-info/](https://zawakarui.github.io/ai-question-navigator-info/)
-- **拡張機能リポジトリ**: [https://github.com/zawakarui/ai-question-navigator](https://github.com/zawakarui/ai-question-navigator)
-- **Chrome Web Store**: [AI Question Navigator](https://chromewebstore.google.com/detail/ai-question-navigator)
+- **Chrome Web Store**: [AI Question Navigator](https://chromewebstore.google.com/detail/iehaefcnohajfglikbpobcjohkfmldjk)
 
 ## ✨ 主な機能
 
@@ -345,7 +344,7 @@ aiNavigatorDebug.reinitialize();
 
 ## 📄 ライセンス
 
-MIT License - 詳細は [LICENSE](https://github.com/zawakarui/ai-question-navigator/blob/main/LICENSE) ファイルを参照
+MIT License
 
 ## 🙏 謝辞
 
@@ -363,7 +362,7 @@ MIT License - 詳細は [LICENSE](https://github.com/zawakarui/ai-question-navig
 - [Perplexity.ai](https://www.perplexity.ai/)
 
 **📞 サポート**
-問題が発生した場合は、ブラウザのコンソールログと共に[Issue](https://github.com/zawakarui/ai-question-navigator/issues)を作成してください。
+問題が発生した場合は、[Chrome Web Store のレビュー欄](https://chromewebstore.google.com/detail/iehaefcnohajfglikbpobcjohkfmldjk)からお知らせください。
 
 ---
 
