@@ -3,165 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI質問ナビゲーター | プライバシーポリシー</title>
+    <title>AI質問ナビゲーター — Claude / ChatGPT / Gemini / Perplexity の長い会話にナビゲーションを</title>
+    <meta name="description" content="Claude、ChatGPT、Gemini、Perplexity の長い会話から質問を自動検出し、サイドバーでワンクリック移動できる Chrome 拡張機能。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/zawakarui/ai-question-navigator/main/icons/icon32.png">
+    <link rel="icon" type="image/png" href="icons/icon48.png">
 </head>
 <body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="icons/icon128.png" alt="" class="logo-img" width="26" height="26">
+                <h1>AI質問ナビゲーター</h1>
+            </div>
+            <div class="language-switcher" role="tablist" aria-label="Language switcher">
+                <button class="lang-btn active" data-lang="ja" type="button">JP</button>
+                <button class="lang-btn" data-lang="en" type="button">EN</button>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
-        <header class="header">
-            <div class="header-content">
-                <div class="logo-section">
-                    <span class="emoji">🤖</span>
-                    <h1>AI質問ナビゲーター</h1>
-                </div>
-                <div class="language-switcher">
-                    <button class="lang-btn active" data-lang="ja">日本語</button>
-                    <button class="lang-btn" data-lang="en">English</button>
-                </div>
-            </div>
-        </header>
-
         <main class="main-content">
-            <div class="hero-section">
-                <h2 class="hero-title">
-                    <span class="emoji">🔒</span>
-                    <span data-translate="hero-title">プライバシーポリシー</span>
-                </h2>
-                <p class="hero-description" data-translate="hero-description">
-                    AI質問ナビゲーター Chrome拡張機能のプライバシーポリシーをご確認いただけます。お客様のプライバシー保護について詳しく説明いたします。
-                </p>
-            </div>
-
-            <div class="policy-cards">
-                <div class="policy-card">
-                    <div class="card-icon">🛡️</div>
-                    <h3 data-translate="complete-privacy">完全プライバシー保護</h3>
-                    <ul>
-                        <li data-translate="no-data-collection">データ収集なし</li>
-                        <li data-translate="no-external-transmission">外部送信なし</li>
-                        <li data-translate="local-processing">ローカル処理のみ</li>
-                    </ul>
-                </div>
-
-                <div class="policy-card">
-                    <div class="card-icon">⚡</div>
-                    <h3 data-translate="minimal-permissions">必要最小権限</h3>
-                    <ul>
-                        <li><code>activeTab</code> - <span data-translate="question-detection">質問検出のみ</span></li>
-                        <li><code>scripting</code> - <span data-translate="ui-display">UI表示のみ</span></li>
-                        <li><code>storage</code> - <span data-translate="settings-storage">ユーザー設定の保存のみ</span></li>
-                    </ul>
-                </div>
-
-                <div class="policy-card">
-                    <div class="card-icon">🌟</div>
-                    <h3 data-translate="transparency">透明性の確保</h3>
-                    <ul>
-                        <li data-translate="open-source">オープンソース</li>
-                        <li data-translate="manifest-v3">Manifest V3準拠</li>
-                        <li data-translate="security-guaranteed">セキュリティ保証</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="cta-section">
-                <h3 data-translate="read-full-policy">詳細なプライバシーポリシー</h3>
-                <p data-translate="choose-language">お好みの言語でプライバシーポリシーをお読みください：</p>
-                
-                <div class="cta-buttons">
-                    <a href="privacy-policy-ja.html" class="cta-button primary">
-                        <span class="emoji">📋</span>
-                        <span data-translate="japanese-version">日本語版を読む</span>
+            <section class="hero-section">
+                <span class="hero-eyebrow" data-translate="hero-eyebrow">Chrome Extension · v1.3.1</span>
+                <h2 class="hero-title" data-translate="hero-title">AIとの長い会話に、ナビゲーションを。</h2>
+                <p class="hero-description" data-translate="hero-subtitle">Claude / ChatGPT / Gemini / Perplexity の質問を自動検出し、サイドバーでワンクリック移動。</p>
+                <div class="hero-cta">
+                    <a href="https://chromewebstore.google.com/detail/iehaefcnohajfglikbpobcjohkfmldjk" target="_blank" rel="noopener" class="cta-button">
+                        <span data-translate="cta-install">Chrome Web Store で追加</span>
                     </a>
-                    <a href="privacy-policy-en.html" class="cta-button secondary">
-                        <span class="emoji">📄</span>
-                        <span data-translate="english-version">English Version</span>
-                    </a>
+                    <span class="hero-meta" data-translate="hero-meta">無料 · Manifest V3 準拠</span>
                 </div>
-            </div>
-
-            <div class="quick-info">
-                <div class="info-item">
-                    <span class="emoji">📅</span>
-                    <strong data-translate="last-updated">最終更新</strong>: 2026年5月11日
-                </div>
-                <div class="info-item">
-                    <span class="emoji">📋</span>
-                    <strong data-translate="version">バージョン</strong>: 1.3.1
-                </div>
-                <div class="info-item">
-                    <span class="emoji">🌍</span>
-                    <strong data-translate="applicable">適用範囲</strong>: <span data-translate="all-users">全世界のユーザー</span>
-                </div>
-            </div>
+            </section>
         </main>
-
-        <footer class="footer">
-            <div class="footer-content">
-                <p>&copy; 2025 AI Question Navigator Development Team</p>
-                <div class="footer-links">
-                    <a href="https://github.com/zawakarui/ai-question-navigator" target="_blank">
-                        <span class="emoji">📦</span> GitHub
-                    </a>
-                    <a href="https://chromewebstore.google.com/detail/ai-question-navigator" target="_blank">
-                        <span class="emoji">🏪</span> Chrome Web Store
-                    </a>
-                </div>
-            </div>
-        </footer>
     </div>
 
+    <div class="service-strip">
+        <div class="service-strip-inner">
+            <span class="service-strip-label" data-translate="service-strip-label">対応サービス</span>
+            <div class="service-names">
+                <span class="service-name">Claude</span>
+                <span class="service-name">ChatGPT</span>
+                <span class="service-name">Gemini</span>
+                <span class="service-name">Perplexity</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section reveal" id="features">
+            <h3 class="section-heading" data-translate="features-heading">機能</h3>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <span class="feature-number">01</span>
+                    <h3 data-translate="feature-1-title">4 つの AI サービスに対応</h3>
+                    <p data-translate="feature-1-desc">Claude / ChatGPT / Gemini / Perplexity の 4 サービスに対応。サービスごとのテーマカラーで一目で識別できます。</p>
+                    <div class="service-badges">
+                        <span class="service-badge">Claude</span>
+                        <span class="service-badge">ChatGPT</span>
+                        <span class="service-badge">Gemini</span>
+                        <span class="service-badge">Perplexity</span>
+                    </div>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-number">02</span>
+                    <h3 data-translate="feature-2-title">質問の自動検出 & コピー</h3>
+                    <p data-translate="feature-2-desc">会話の中の質問を自動でリスト化。クリックで該当箇所へスムーズスクロール、Shift+クリックで質問と回答を Markdown 形式でコピーできます。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-number">03</span>
+                    <h3 data-translate="feature-3-title">サイドバーを自由にカスタマイズ</h3>
+                    <p data-translate="feature-3-desc">ドラッグで位置移動、角ドラッグでサイズ変更、最小化で省スペース表示。起動時から最小化状態で開くオプションも選べます (v1.3.1)。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section quickstart-section reveal" id="quickstart">
+            <h3 class="section-heading" data-translate="quickstart-heading">利用手順</h3>
+            <div class="quickstart-steps">
+                <div class="quickstart-step">
+                    <span class="step-number">01</span>
+                    <p class="quickstart-step-text" data-translate="quickstart-step1">Chrome Web Store からインストール</p>
+                </div>
+                <div class="quickstart-step">
+                    <span class="step-number">02</span>
+                    <p class="quickstart-step-text" data-translate="quickstart-step2">Claude / ChatGPT / Gemini / Perplexity を開く</p>
+                </div>
+                <div class="quickstart-step">
+                    <span class="step-number">03</span>
+                    <p class="quickstart-step-text" data-translate="quickstart-step3">サイドバーで質問をクリック</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section privacy-callout-section reveal" id="privacy">
+            <div class="privacy-callout">
+                <div class="privacy-callout-text">
+                    <h3 data-translate="privacy-callout-title">プライバシー、最優先。</h3>
+                    <p data-translate="privacy-callout-desc">データ収集なし・外部送信なし・すべてローカル処理。詳細はプライバシーポリシーをご覧ください。</p>
+                </div>
+                <div class="privacy-callout-links">
+                    <a href="privacy-policy-ja.html" class="privacy-callout-link" data-translate="privacy-link-ja">日本語ポリシー</a>
+                    <a href="privacy-policy-en.html" class="privacy-callout-link" data-translate="privacy-link-en">English Policy</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="quick-info">
+            <div class="info-item">
+                <strong data-translate="last-updated">最終更新</strong>
+                <span>2026.05.12</span>
+            </div>
+            <div class="info-item">
+                <strong data-translate="version">バージョン</strong>
+                <span>1.3.1</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025–2026 AI Question Navigator</p>
+            <div class="footer-links">
+                <a href="https://chromewebstore.google.com/detail/iehaefcnohajfglikbpobcjohkfmldjk" target="_blank" rel="noopener">Chrome Web Store</a>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // 言語切り替え機能
+        // Translation dictionary (plain text values).
         const translations = {
             ja: {
-                'hero-title': 'プライバシーポリシー',
-                'hero-description': 'AI質問ナビゲーター Chrome拡張機能のプライバシーポリシーをご確認いただけます。お客様のプライバシー保護について詳しく説明いたします。',
-                'complete-privacy': '完全プライバシー保護',
-                'no-data-collection': 'データ収集なし',
-                'no-external-transmission': '外部送信なし',
-                'local-processing': 'ローカル処理のみ',
-                'minimal-permissions': '必要最小権限',
-                'question-detection': '質問検出のみ',
-                'ui-display': 'UI表示のみ',
-                'settings-storage': 'ユーザー設定の保存のみ',
-                'transparency': '透明性の確保',
-                'open-source': 'オープンソース',
-                'manifest-v3': 'Manifest V3準拠',
-                'security-guaranteed': 'セキュリティ保証',
-                'read-full-policy': '詳細なプライバシーポリシー',
-                'choose-language': 'お好みの言語でプライバシーポリシーをお読みください：',
-                'japanese-version': '日本語版を読む',
-                'english-version': 'English Version',
+                'hero-eyebrow': 'Chrome Extension · v1.3.1',
+                'hero-title': 'AIとの長い会話に、ナビゲーションを。',
+                'hero-subtitle': 'Claude / ChatGPT / Gemini / Perplexity の質問を自動検出し、サイドバーでワンクリック移動。',
+                'cta-install': 'Chrome Web Store で追加',
+                'hero-meta': '無料 · Manifest V3 準拠',
+                'service-strip-label': '対応サービス',
+                'features-heading': '機能',
+                'quickstart-heading': '利用手順',
+                'feature-1-title': '4 つの AI サービスに対応',
+                'feature-1-desc': 'Claude / ChatGPT / Gemini / Perplexity の 4 サービスに対応。サービスごとのテーマカラーで一目で識別できます。',
+                'feature-2-title': '質問の自動検出 & コピー',
+                'feature-2-desc': '会話の中の質問を自動でリスト化。クリックで該当箇所へスムーズスクロール、Shift+クリックで質問と回答を Markdown 形式でコピーできます。',
+                'feature-3-title': 'サイドバーを自由にカスタマイズ',
+                'feature-3-desc': 'ドラッグで位置移動、角ドラッグでサイズ変更、最小化で省スペース表示。起動時から最小化状態で開くオプションも選べます (v1.3.1)。',
+                'quickstart-step1': 'Chrome Web Store からインストール',
+                'quickstart-step2': 'Claude / ChatGPT / Gemini / Perplexity を開く',
+                'quickstart-step3': 'サイドバーで質問をクリック',
+                'privacy-callout-title': 'プライバシー、最優先。',
+                'privacy-callout-desc': 'データ収集なし・外部送信なし・すべてローカル処理。詳細はプライバシーポリシーをご覧ください。',
+                'privacy-link-ja': '日本語ポリシー',
+                'privacy-link-en': 'English Policy',
                 'last-updated': '最終更新',
-                'version': 'バージョン',
-                'applicable': '適用範囲',
-                'all-users': '全世界のユーザー'
+                'version': 'バージョン'
             },
             en: {
-                'hero-title': 'Privacy Policy',
-                'hero-description': 'Review the privacy policy for AI Question Navigator Chrome Extension. We detail how we protect your privacy.',
-                'complete-privacy': 'Complete Privacy Protection',
-                'no-data-collection': 'No Data Collection',
-                'no-external-transmission': 'No External Transmission',
-                'local-processing': 'Local Processing Only',
-                'minimal-permissions': 'Minimal Permissions',
-                'question-detection': 'Question Detection Only',
-                'ui-display': 'UI Display Only',
-                'settings-storage': 'User Settings Storage Only',
-                'transparency': 'Transparency Assured',
-                'open-source': 'Open Source',
-                'manifest-v3': 'Manifest V3 Compliant',
-                'security-guaranteed': 'Security Guaranteed',
-                'read-full-policy': 'Full Privacy Policy',
-                'choose-language': 'Read our privacy policy in your preferred language:',
-                'japanese-version': '日本語版を読む',
-                'english-version': 'Read English Version',
+                'hero-eyebrow': 'Chrome Extension · v1.3.1',
+                'hero-title': 'Bring navigation to your long AI conversations.',
+                'hero-subtitle': 'Auto-detect questions from Claude / ChatGPT / Gemini / Perplexity and jump with one click from a sidebar.',
+                'cta-install': 'Add to Chrome',
+                'hero-meta': 'Free · Manifest V3',
+                'service-strip-label': 'Supported services',
+                'features-heading': 'Features',
+                'quickstart-heading': 'Getting started',
+                'feature-1-title': 'Works on 4 AI services',
+                'feature-1-desc': 'Supports Claude, ChatGPT, Gemini, and Perplexity — each with its own theme color for instant recognition.',
+                'feature-2-title': 'Auto-detect questions & copy',
+                'feature-2-desc': 'Automatically lists user questions in the conversation. Click to scroll, Shift+click to copy question + answer as Markdown.',
+                'feature-3-title': 'Customize your sidebar',
+                'feature-3-desc': 'Drag to reposition, resize from the corner, minimize to save space. Includes a "start minimized" option (v1.3.1).',
+                'quickstart-step1': 'Install from Chrome Web Store',
+                'quickstart-step2': 'Open Claude, ChatGPT, Gemini, or Perplexity',
+                'quickstart-step3': 'Click any question in the sidebar',
+                'privacy-callout-title': 'Privacy, first.',
+                'privacy-callout-desc': 'No data collection, no external transmission — everything runs locally. See the privacy policy for details.',
+                'privacy-link-ja': 'Japanese Policy',
+                'privacy-link-en': 'English Policy',
                 'last-updated': 'Last Updated',
-                'version': 'Version',
-                'applicable': 'Applicable',
-                'all-users': 'All Users Worldwide'
+                'version': 'Version'
             }
         };
 
@@ -169,30 +191,43 @@
             const elements = document.querySelectorAll('[data-translate]');
             elements.forEach(element => {
                 const key = element.getAttribute('data-translate');
-                if (translations[lang] && translations[lang][key]) {
+                if (translations[lang] && translations[lang][key] !== undefined) {
                     element.textContent = translations[lang][key];
                 }
             });
 
-            // Update active language button
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.lang === lang);
             });
 
-            // Update HTML lang attribute
             document.documentElement.lang = lang;
         }
 
-        // Language switcher event listeners
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 switchLanguage(btn.dataset.lang);
             });
         });
 
-        // Initialize with browser language preference
         const browserLang = navigator.language.startsWith('ja') ? 'ja' : 'en';
         switchLanguage(browserLang);
+
+        // Scroll-triggered reveal
+        const reveals = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+            reveals.forEach(el => io.observe(el));
+        } else {
+            reveals.forEach(el => el.classList.add('in-view'));
+        }
     </script>
 </body>
 </html>
