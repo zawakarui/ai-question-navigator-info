@@ -1,8 +1,8 @@
 # AI質問ナビゲーター - 情報サイト
 
-Claude、ChatGPT、Gemini、Perplexityに対応した質問ナビゲーション機能を提供するChrome拡張機能です。長い会話の中から質問を自動検出し、素早くアクセスできるサイドバーを表示します。
+Claude、ChatGPT、Gemini、Perplexity、Microsoft Copilotに対応した質問ナビゲーション機能を提供するChrome拡張機能です。長い会話の中から質問を自動検出し、素早くアクセスできるサイドバーを表示します。
 
-![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.3.1-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
+![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.4.0-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
 
 ## 🔗 リンク
 
@@ -15,7 +15,8 @@ Claude、ChatGPT、Gemini、Perplexityに対応した質問ナビゲーション
 - **Claude.ai** - Claude AI チャット
 - **ChatGPT** - OpenAI ChatGPT
 - **Gemini** - Google Gemini AI
-- **Perplexity.ai** - Perplexity AI 検索エンジン 🆕
+- **Perplexity.ai** - Perplexity AI 検索エンジン
+- **Microsoft Copilot** - consumer (copilot.microsoft.com) + M365 Copilot Chat (m365.cloud.microsoft) 🆕
 
 ### 🔍 自動質問検出
 - ユーザーが投稿した質問のみを自動検出
@@ -65,7 +66,7 @@ cd ai-question-navigator
 
 ### 4. 動作確認
 
-1. [Claude.ai](https://claude.ai/)、[ChatGPT](https://chatgpt.com/)、[Gemini](https://gemini.google.com/)、または[Perplexity.ai](https://www.perplexity.ai/)にアクセス
+1. [Claude.ai](https://claude.ai/)、[ChatGPT](https://chatgpt.com/)、[Gemini](https://gemini.google.com/)、[Perplexity.ai](https://www.perplexity.ai/)、[Microsoft Copilot](https://copilot.microsoft.com/) または [M365 Copilot Chat](https://m365.cloud.microsoft/chat) にアクセス
 2. 質問を投稿
 3. 画面右上にサイドバーが表示されることを確認
 
@@ -122,18 +123,18 @@ aiNavigatorDebug.getCurrentService();
 ### アーキテクチャ
 
 ```
-┌─────────────────────────────────────────────┐
-│           Chrome Extension                  │
-├─────────────────────────────────────────────┤
-│     Unified Question Navigator              │
-├─────────────────────────────────────────────┤
-│ ┌─────────┐ ┌─────────┐ ┌─────┐ ┌────────┐ │
-│ │ Claude  │ │ChatGPT  │ │Gemini│ │Perplex.│ │
-│ │Detector │ │Detector │ │Det.  │ │Detector│ │
-│ └─────────┘ └─────────┘ └─────┘ └────────┘ │
-├─────────────────────────────────────────────┤
-│         Navigator UI (共通)                 │
-└─────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────┐
+│              Chrome Extension                        │
+├──────────────────────────────────────────────────────┤
+│       Unified Question Navigator                     │
+├──────────────────────────────────────────────────────┤
+│ ┌─────┐ ┌─────┐ ┌─────┐ ┌────────┐ ┌────────┐       │
+│ │Claud│ │ChatG│ │Gemin│ │Perplex.│ │ Copilot│       │
+│ │ Det.│ │ Det.│ │ Det.│ │ Det.   │ │ Det. 🆕│       │
+│ └─────┘ └─────┘ └─────┘ └────────┘ └────────┘       │
+├──────────────────────────────────────────────────────┤
+│           Navigator UI (共通)                        │
+└──────────────────────────────────────────────────────┘
 ```
 
 ### 主要技術
@@ -162,7 +163,8 @@ ai-question-navigator/
 │   ├── claude-detector.js     # Claude専用
 │   ├── chatgpt-detector.js    # ChatGPT専用
 │   ├── gemini-detector.js     # Gemini専用
-│   └── perplexity-detector.js # Perplexity専用 🆕
+│   ├── perplexity-detector.js # Perplexity専用
+│   └── copilot-detector.js    # Microsoft Copilot専用 🆕
 ├── ui/                        # UI関連
 │   ├── navigator-ui.js        # 共通UI
 │   └── styles.css            # スタイルシート
@@ -197,7 +199,8 @@ this.selectors = {
   --claude-color: #ff6b35;      /* Claude橙 */
   --chatgpt-color: #10a37f;     /* ChatGPT緑 */
   --gemini-color: #4285f4;      /* Gemini青 */
-  --perplexity-color: #20b2aa;  /* Perplexity水色 */ 🆕
+  --perplexity-color: #20b2aa;  /* Perplexity水色 */
+  --copilot-color: #8B5CF6;     /* Copilot紫 */ 🆕
 }
 ```
 
@@ -213,7 +216,7 @@ this.selectors = {
 
 #### Q: サイドバーが表示されない
 **A**: 以下を確認してください：
-- 対応サイト（Claude.ai、ChatGPT、Gemini、Perplexity.ai）にアクセスしているか
+- 対応サイト（Claude.ai、ChatGPT、Gemini、Perplexity.ai、Microsoft Copilot、M365 Copilot Chat）にアクセスしているか
 - 拡張機能が有効になっているか
 - コンソールエラーがないか
 
@@ -260,7 +263,22 @@ aiNavigatorDebug.reinitialize();
 
 ## 📝 更新履歴
 
-### v1.3.1 (2026-05-11) 🆕
+### v1.4.0 (2026-05-24) 🆕
+- 🎉 **Microsoft Copilot 対応を追加**
+- ✅ consumer Copilot (`https://copilot.microsoft.com/*`) と M365 Copilot Chat (`https://m365.cloud.microsoft/chat*`) の 2 系統に対応
+- ✅ CopilotDetector クラスを新規実装 (consumer/m365 二系統対応、660 行)
+- ✅ M365 の仮想スクロール (`fui-Virtualizer`) に対応した累積検出方式
+- ✅ Copilot 専用テーマカラー追加 (紫 #8B5CF6)
+- ✅ consumer の `data-content="user-message"` ⇔ `data-content="ai-message"` 対称構造を活用
+- 🛡️ **設計方針**: content-based fallback (`findUserQueriesByContent`) は不採用 (mavatar 同型バグ予防)。excludePatterns は全て両端 anchor (v1.3.6/v1.3.7 教訓)
+- 🐛 v1.4.0 RC 修正: `[data-message-type="Progress"]` が persistent 属性と判明したため、ストリーミング保留分岐を撤廃 (回帰防止テスト追加)
+
+### v1.3.7 (2026-05-22)
+- 🔧 **挨拶 excludePattern を両端 anchor 化**
+- ✅ 「ありがとうございます。ところで、X?」のような相槌から入る正当な後続質問が検出されるよう base-detector の `isValidQuestion` パターンを修正
+- ✅ 純粋な相槌 (「ありがとう」「了解」等) は引き続き除外される回帰非影響を担保
+
+### v1.3.1 (2026-05-11)
 - ✨ **「最小化状態でスタート」オプションの追加**
 - ✅ popup に ON/OFF トグルを設置し、`chrome.storage.local` で永続化
 - ✅ ON の場合は毎回サイドバーを最小化状態（幅 150px、ヘッダーのみ）で起動
@@ -348,7 +366,7 @@ MIT License
 
 ## 🙏 謝辞
 
-- **Claude, ChatGPT, Gemini, Perplexity** - 素晴らしいAIサービスの提供
+- **Claude, ChatGPT, Gemini, Perplexity, Microsoft Copilot** - 素晴らしいAIサービスの提供
 - **Chrome Extensions API** - 豊富な機能の提供
 - **オープンソースコミュニティ** - 参考にさせていただいた多くのプロジェクト
 
@@ -360,6 +378,7 @@ MIT License
 - [ChatGPT](https://chatgpt.com/)
 - [Gemini](https://gemini.google.com/)
 - [Perplexity.ai](https://www.perplexity.ai/)
+- [Microsoft Copilot](https://copilot.microsoft.com/) / [M365 Copilot Chat](https://m365.cloud.microsoft/chat)
 
 **📞 サポート**
 問題が発生した場合は、[Chrome Web Store のレビュー欄](https://chromewebstore.google.com/detail/iehaefcnohajfglikbpobcjohkfmldjk)からお知らせください。
