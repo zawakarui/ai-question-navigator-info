@@ -2,7 +2,7 @@
 
 Claude、ChatGPT、Gemini、Perplexity、Microsoft Copilotに対応した質問ナビゲーション機能を提供するChrome拡張機能です。長い会話の中から質問を自動検出し、素早くアクセスできるサイドバーを表示します。
 
-![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.4.0-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
+![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.4.1-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
 
 ## 🔗 リンク
 
@@ -263,7 +263,15 @@ aiNavigatorDebug.reinitialize();
 
 ## 📝 更新履歴
 
-### v1.4.0 (2026-05-24) 🆕
+### v1.4.1 (2026-08-19) 🆕
+- 🐛 **Claude Web の UI 刷新で質問が検出されなくなる問題を修正**
+- ✅ Claude 側の DOM 構造変更（デザインシステム刷新・仮想スクロール導入）に検出セレクタを追随
+- ✅ 会話外の UI 要素（アカウント名）が質問として誤表示される問題を解消
+- ✅ 複数段落・長文の質問も全文が正しく抽出されるよう改善
+- ✅ Q+A コピー機能の回答抽出を新 DOM 構造に対応
+- 🛡️ **設計方針**: 広すぎるワイルドカードセレクタを全廃し、構造ベースの除外判定を第一防御に変更。Claude 専用の回帰テストを新規追加（16 ケース）
+
+### v1.4.0 (2026-05-24)
 - 🎉 **Microsoft Copilot 対応を追加**
 - ✅ consumer Copilot (`https://copilot.microsoft.com/*`) と M365 Copilot Chat (`https://m365.cloud.microsoft/chat*`) の 2 系統に対応
 - ✅ CopilotDetector クラスを新規実装 (consumer/m365 二系統対応、660 行)
