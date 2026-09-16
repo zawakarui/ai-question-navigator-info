@@ -2,7 +2,7 @@
 
 Claude、ChatGPT、Gemini、Perplexity、Microsoft Copilotに対応した質問ナビゲーション機能を提供するChrome拡張機能です。長い会話の中から質問を自動検出し、素早くアクセスできるサイドバーを表示します。
 
-![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.4.1-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
+![AI質問ナビゲーター](https://img.shields.io/badge/Version-1.4.2-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow)
 
 ## 🔗 リンク
 
@@ -263,7 +263,13 @@ aiNavigatorDebug.reinitialize();
 
 ## 📝 更新履歴
 
-### v1.4.1 (2026-08-19) 🆕
+### v1.4.2 (2026-09-16) 🆕
+- 🐛 **Perplexity の UI 刷新で質問が検出されなくなる問題を修正**
+- ✅ Perplexity のチャットバブル型 UI への移行に検出セレクタを追随（旧 UI との後方互換も維持）
+- ✅ 「はい、〜」のような相槌から始まる正当な質問が除外されてしまう問題を解消
+- 🛡️ **設計方針**: フォールバック探索を「検証を通過した要素が得られたセレクタで確定」方式に是正（v1.4.1 の Claude 対応と同方式に統一）。Perplexity 向け回帰テストを 6 ケース追加
+
+### v1.4.1 (2026-08-19)
 - 🐛 **Claude Web の UI 刷新で質問が検出されなくなる問題を修正**
 - ✅ Claude 側の DOM 構造変更（デザインシステム刷新・仮想スクロール導入）に検出セレクタを追随
 - ✅ 会話外の UI 要素（アカウント名）が質問として誤表示される問題を解消
